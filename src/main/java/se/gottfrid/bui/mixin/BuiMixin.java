@@ -1,11 +1,11 @@
 package se.gottfrid.bui.mixin;
 
-import se.gottfrid.bui.Main;
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import se.gottfrid.bui.Main;
 
 @Mixin(TitleScreen.class)
 public class BuiMixin {
