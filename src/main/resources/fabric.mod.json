@@ -9,11 +9,11 @@
     "Gottfrid_N"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage": "https://github.com/Gottfrid-N/Bui-1.19.2-Fabric",
+    "sources": "https://github.com/Gottfrid-N/Bui-1.19.2-Fabric"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/bui/icon.png",
 
   "environment": "*",

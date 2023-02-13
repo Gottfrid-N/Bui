@@ -4,13 +4,13 @@ import net.minecraft.data.client.Model;
 import net.minecraft.item.ItemGroup;
 
 public class RegistryElement {
-	public String ID;
-	public ItemGroup ITEMGROUP;
-	public Model MODEL;
+	public final String id;
+	public final ItemGroup itemGroup;
+	public final Model model;
 	public RegistryElement(String id, ItemGroup itemGroup, Model model) {
-		ID = id;
-		MODEL = model;
-		ITEMGROUP = itemGroup;
+		this.id = id;
+		this.model = model;
+		this.itemGroup = itemGroup;
 	}
 }
 

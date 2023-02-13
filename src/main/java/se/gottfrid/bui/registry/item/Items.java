@@ -7,22 +7,20 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import se.gottfrid.bui.Main;
 import se.gottfrid.bui.registry.Registry;
-import se.gottfrid.bui.registry.RegistryItem;
 
 public class Items {
-    // check se.gottfrid.bui.registry.Registry.ITEMS for most items
-    public static void arrayInterpreter() {
-        for(RegistryItem array : Registry.ITEMS) {
-            interpretItemArray(array.ID, array.ITEMGROUP, array.ITEM, "item");
+    public static class RegistryInterpreter implements Registry.Interpreter {
+        @Override
+        public void interpreter() {
+            for(RegistryItem array : Registry.ITEMS) {
+                itemInterpreter(array, "item");
+            }
         }
-    }
-    public static void interpretItemArray(String id, ItemGroup itemGroup, Item item, String stage) {
-        final Item internalItem = registerItem(id, item, stage);
-        addItemToItemGroup(itemGroup, internalItem);
-    }
-    public static Item registerItem(String id, Item item, String stage) {
-        Main.LOGGER.info("registering "+stage+"/"+id);
-        return registerItem(id, item);
+        public void itemInterpreter(RegistryItem item, String stage) {
+                Main.LOGGER.info("Registering "+Main.ID+":"+stage+"/"+item.id);
+            final Item internalItem = item.interpret(item);
+            Items.addItemToItemGroup(item.itemGroup, internalItem);
+        }
     }
     public static Item registerItem(String id, Item item) {
         return net.minecraft.registry.Registry.register(Registries.ITEM,new Identifier(Main.ID,id),item);
@@ -30,4 +28,6 @@ public class Items {
     public static void addItemToItemGroup(ItemGroup itemGroup, Item item) {
         ItemGroupEvents.modifyEntriesEvent(itemGroup).register(entries -> entries.add(item));
     }
+
+
 }
