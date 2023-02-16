@@ -1,4 +1,4 @@
-package se.gottfrid.bui.registry.block;
+package se.gottfrid.api.registry.elements;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -8,7 +8,7 @@ import net.minecraft.data.client.Model;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.DyeColor;
-import se.gottfrid.bui.registry.RegistryElement;
+import se.gottfrid.api.block.BlockRegistration;
 
 public class RegistryBlock extends RegistryElement {
 	public final Block block;
@@ -36,7 +36,7 @@ public class RegistryBlock extends RegistryElement {
 		block = defaultBlock(color);
 		blockItem = "BlockItem";
 	}
-	public Block interpret(RegistryBlock block) {
-		return Blocks.registerBlock(block.id, block.block);
+	public Block interpret(String identifier) {
+		return BlockRegistration.registerBlock(this.id, this.block, identifier);
 	}
 }

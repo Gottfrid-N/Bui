@@ -27,10 +27,6 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 		@Override
 		public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 		}
-		private void itemModel(ItemModelGenerator itemModelGenerator) {
-			itemModelGenerator.register();
-		}
-
 	}
 	public static class recipeGenerator extends FabricRecipeProvider {
 		public recipeGenerator(FabricDataOutput output) {

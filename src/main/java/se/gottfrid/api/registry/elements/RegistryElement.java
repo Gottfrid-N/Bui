@@ -1,9 +1,9 @@
-package se.gottfrid.bui.registry;
+package se.gottfrid.api.registry.elements;
 
 import net.minecraft.data.client.Model;
 import net.minecraft.item.ItemGroup;
 
-public class RegistryElement {
+public abstract class RegistryElement {
 	public final String id;
 	public final ItemGroup itemGroup;
 	public final Model model;
