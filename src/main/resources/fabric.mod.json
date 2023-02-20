@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "se.gottfrid.bui.Main"
+      "se.gottfrid.bui.Bui"
     ],
     "fabric-datagen": [
       "se.gottfrid.bui.datagen.DataGenerator"

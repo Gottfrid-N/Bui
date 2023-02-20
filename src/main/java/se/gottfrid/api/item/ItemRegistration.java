@@ -6,9 +6,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
-public class ItemRegistration {
+public abstract class ItemRegistration {
 	public static Item registerItem(String id, Item item, String identifier) {
-		return net.minecraft.registry.Registry.register(Registries.ITEM,new Identifier(identifier,id),item);
+		return net.minecraft.registry.Registry.register(Registries.ITEM,new Identifier(identifier, id),item);
 	}
 	public static void toItemGroup(Item item, ItemGroup itemGroup) {
 		ItemGroupEvents.modifyEntriesEvent(itemGroup).register(entries -> entries.add(item));
