@@ -21,7 +21,7 @@ public class Blocks {
             Bui.logRegister(block.id, stage);
             final Block internalBlock = block.interpret(Bui.IDENTIFIER);
             Bui.logRegister(block.id, stage+"Item");
-            final Item internalItem = ItemRegistration.registerItem(block.id, new BlockItem(internalBlock, new FabricItemSettings()), Bui.IDENTIFIER);
+            final Item internalItem = ItemRegistration.registerIdentifierItem(block.id, new BlockItem(internalBlock, new FabricItemSettings()), Bui.IDENTIFIER);
             ItemRegistration.toItemGroup(internalItem, block.itemGroup);
         }
     }

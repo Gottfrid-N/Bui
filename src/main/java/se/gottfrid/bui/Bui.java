@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.gottfrid.bui.block.Blocks;
-import se.gottfrid.bui.item.Items;
+import se.gottfrid.bui.item.BuiItems;
 
 public class Bui extends se.gottfrid.api.Main implements ModInitializer  {
 	public static final Logger LOGGER = LoggerFactory.getLogger("bui");
@@ -15,15 +15,16 @@ public class Bui extends se.gottfrid.api.Main implements ModInitializer  {
 	public static final String IDENTIFIER = "bui";
 	public static final String NAME = "Bui";
 	public static void logStage(String stage) {
-		logStage(stage, NAME, VERSION, LOGGER);
+		lowLogStage(stage, NAME, VERSION, LOGGER);
 	}
-	public static void logRegister(String id, String type, String stage) {logRegister(stage, IDENTIFIER, type, id, LOGGER);}
+	public static void logRegister(String id, String type, String stage) {
+		lowLogRegister(stage, IDENTIFIER, type, id, LOGGER);}
 	@Override
 	public void onInitialize() {
 		logStage("Items");
-		Blocks.RegistryInterpreter.interpreter();
+
 		logStage("Blocks");
-		Items items = new Items();
+
 		LOGGER.info(Bui.NAME + ". By builders, for builders");
 	}
 }

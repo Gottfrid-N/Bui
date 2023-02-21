@@ -6,16 +6,18 @@ import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
 import net.minecraft.item.Item;
-
-// ALWAYS PREFIX WITH IDENTIFIER OF MOD
+// prefix mod id
 public abstract class Vault {
-	public static Item defualtItem() {
-		return new Item(new FabricItemSettings());
+	public static Item defaultItem(FabricItemSettings settings) {//complex
+		return new Item(settings);
 	}
-	public static Block defualtBlock(Material material, MapColor color ) {
+	public static Item defaultItem() {
+		return defaultItem(new FabricItemSettings());
+	}
+	public static Block defaultBlock(Material material, MapColor color ) {//complex
 		return new Block(FabricBlockSettings.of(material, color));
 	}
-	public static Block defualtBlock(MapColor color) {
-		return new Block(FabricBlockSettings.of(Material.METAL, color));
+	public static Block defaultBlock(MapColor color) {
+		return defaultBlock(Material.METAL, color);
 	}
 }
