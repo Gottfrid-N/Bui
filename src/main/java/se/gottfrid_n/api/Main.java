@@ -1,4 +1,4 @@
-package se.gottfrid.api;
+package se.gottfrid_n.api;
 
 import org.slf4j.Logger;
 // prefix mod id || mod name

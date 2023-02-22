@@ -1,4 +1,4 @@
-package se.gottfrid.api.vault;
+package se.gottfrid_n.api.vault;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;

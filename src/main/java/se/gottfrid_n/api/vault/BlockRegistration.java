@@ -1,4 +1,4 @@
-package se.gottfrid.api.vault;
+package se.gottfrid_n.api.vault;
 
 import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;

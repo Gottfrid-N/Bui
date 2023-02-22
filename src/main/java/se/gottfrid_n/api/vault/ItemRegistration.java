@@ -1,4 +1,4 @@
-package se.gottfrid.api.vault;
+package se.gottfrid_n.api.vault;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;

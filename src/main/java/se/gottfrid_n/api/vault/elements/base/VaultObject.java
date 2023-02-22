@@ -1,4 +1,4 @@
-package se.gottfrid.api.vault.elements.base;
+package se.gottfrid_n.api.vault.elements.base;
 
 import net.minecraft.item.ItemGroup;
 

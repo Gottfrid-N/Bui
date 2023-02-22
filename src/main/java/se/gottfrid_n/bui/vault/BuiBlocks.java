@@ -1,9 +1,9 @@
-package se.gottfrid.bui.vault;
+package se.gottfrid_n.bui.vault;
 
 
 import net.minecraft.block.Block;
-import se.gottfrid.api.vault.BlockRegistration;
-import se.gottfrid.bui.Bui;
+import se.gottfrid_n.api.vault.BlockRegistration;
+import se.gottfrid_n.bui.Bui;
 
 public class BuiBlocks extends BlockRegistration {
 	public static Block registerBlock(String id, Block block) {
