@@ -1,4 +1,4 @@
-package se.gottfrid.bui;
+package se.gottfrid.bui.vault;
 
 import se.gottfrid.api.vault.Vault;
 
