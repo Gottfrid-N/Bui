@@ -1,8 +1,9 @@
 package se.gottfrid_n.api;
 
+import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 // prefix mod id || mod name
-public abstract class Main {
+public abstract class Main implements ModInitializer {
 	public static void lowLogStage(String stage, String name, String version, Logger logger) {
 		logger.info("Registering "+stage+" for "+name+" "+version);
 	}

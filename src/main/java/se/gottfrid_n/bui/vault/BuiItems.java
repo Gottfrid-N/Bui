@@ -1,6 +1,5 @@
 package se.gottfrid_n.bui.vault;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -8,10 +7,10 @@ import se.gottfrid_n.api.vault.ItemRegistration;
 import se.gottfrid_n.bui.Bui;
 
 public class BuiItems extends ItemRegistration {
-    public static Item registerBlockItem(Block block, BlockItem item) {
-        //TODO
-        return null;
+    public static Item registerBlockItem(String id, BlockItem blockItem, String stage) {
+        return registerItem(id, blockItem, stage);
     }
+    public static Item registerBlockItem(String id, BlockItem blockItem) {return registerItem(id, blockItem);}
     public static Item registerItem(String id, Item item, String stage) {
         Bui.logRegister(id, "item", stage);
         return registerItem(id, item);

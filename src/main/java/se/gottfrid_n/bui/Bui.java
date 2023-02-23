@@ -1,10 +1,10 @@
 package se.gottfrid_n.bui;
 
-import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import se.gottfrid_n.api.Main;
 
-public class Bui extends se.gottfrid_n.api.Main implements ModInitializer  {
+public class Bui extends Main  {
 	public static final Logger LOGGER = LoggerFactory.getLogger("bui");
 	private static final String FABRIC_VERSION = "fabric.1.19.3";
 	private static final String VERSION_STAGE = "indev";
@@ -15,8 +15,7 @@ public class Bui extends se.gottfrid_n.api.Main implements ModInitializer  {
 	public static void logStage(String stage) {
 		lowLogStage(stage, NAME, VERSION, LOGGER);
 	}
-	public static void logRegister(String id, String type, String stage) {
-		lowLogRegister(stage, IDENTIFIER, type, id, LOGGER);}
+	public static void logRegister(String id, String type, String stage) {lowLogRegister(stage, IDENTIFIER, type, id, LOGGER);}
 	@Override
 	public void onInitialize() {
 		logStage("Items");
