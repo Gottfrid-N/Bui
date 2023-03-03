@@ -1,13 +1,32 @@
 package se.gottfrid_n.api;
 
-import net.fabricmc.api.ModInitializer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import org.slf4j.Logger;
-// prefix mod id || mod name
-public abstract class Main implements ModInitializer {
-	public static void lowLogStage(String stage, String name, String version, Logger logger) {
-		logger.info("Registering "+stage+" for "+name+" "+version);
+import org.slf4j.LoggerFactory;
+
+public class Main {
+	public final String identifier;
+	public final String name;
+	public final String version;
+	public final boolean log;
+	public final Logger logger;
+	public Main(String identifier, String name, boolean log, Version version) {
+		this.identifier = identifier;
+		this.name = name;
+		this.log = log;
+		this.version = version.toString();
+		this.logger = LoggerFactory.getLogger(this.name);
 	}
-	public static void lowLogRegister(String stage, String identifier, String type, String id, Logger logger) {
-		logger.info("Registering "+stage+"|"+identifier+":"+type+"/"+id);
+	public void logRegister(String id, String type) {
+		this.logger.info("Registering: "+this.identifier+":"+type+"/"+id);
 	}
+	public void logStage(String stage) {
+		this.logger.info("Registering Stage: "+stage);
+	}
+	public void logToItemGroup(Item item, ItemGroup itemGroup) {
+		this.logger.info("Sending "+item.toString()+" to "+itemGroup.getDisplayName());
+	}
+
+
 }
