@@ -8,34 +8,35 @@ import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import se.gottfrid_n.api.Main;
-import se.gottfrid_n.api.Version;
-import se.gottfrid_n.api.registration.BlockRegistration;
-import se.gottfrid_n.api.registration.ItemRegistration;
+import se.gottfrid_n.api.Mod;
+import se.gottfrid_n.api.objects.Version;
+import se.gottfrid_n.api.vault.objects.VaultBlock;
+import se.gottfrid_n.api.vault.objects.VaultItem;
 
 public class Bui implements ModInitializer {
-	public static final Main MAIN = new Main("bui","Bui", true,
-			new Version("bui","stable","indev2","0.0a.1c","fabric-0.73.2","1.19.3"));
-	public static final String ITEM_STAGE = "item";
-	public static final String BLOCK_ITEM_STAGE = "";
-	public static final String BLOCK_STAGE = "block";
-	public static final ItemRegistration ITEM = new ItemRegistration(MAIN);
-	public static final BlockRegistration BLOCK = new BlockRegistration(MAIN);
-	public static final Block TEST_BLOCK = BLOCK.register("test_block", new Block(FabricBlockSettings.of(Material.METAL)), BLOCK_STAGE);
-	public static final Item TEST_BLOCK_ITEM = ITEM.register("test_block", new BlockItem(TEST_BLOCK, new FabricItemSettings())
-			, BLOCK_ITEM_STAGE);
-	public static final Block DEFUALT_TEST_BLOCK = BLOCK.register("default_test_block", BLOCK_STAGE);
+	public static final Mod BUI = new Mod("Bui", true, true,
+			new Version("bui",true,
+					"api-indev","0.0a.0b",
+					"fabric-0.73.2","1.19.3"));
+	public static final Block TEST_BLOCK = BUI.block.register("test_block", new Block(FabricBlockSettings.of(Material.METAL)));
+	public static final Item TEST_BLOCK_ITEM = BUI.item.register("test_block", new BlockItem(TEST_BLOCK, new FabricItemSettings()));
 
-	public static final Item TEST_ITEM = ITEM.register("test_item", new Item(new FabricItemSettings()), ITEM_STAGE);
-	public static final Item DEFUALT_TEST_ITEM = ITEM.register("default_test_item",ITEM_STAGE);
+	public static final Item TEST_ITEM = BUI.item.register("test_item", new Item(new FabricItemSettings()));
 
 	@Override
 	public void onInitialize() {
-		MAIN.logStage("toItemGroup");
-		ITEM.toItemGroup(TEST_ITEM, ItemGroups.TOOLS);
-		ITEM.toItemGroup(DEFUALT_TEST_ITEM, ItemGroups.TOOLS);
-		ITEM.toItemGroup(TEST_BLOCK_ITEM, ItemGroups.TOOLS);
-		MAIN.logger.info(MAIN.name + ". By builders, for builders");
-		MAIN.logger.info(MAIN.version);
+		BUI.vault.toVault(new VaultBlock("vault_block",
+				new Block(FabricBlockSettings.of(Material.METAL)),
+				new BlockItem(BUI.vault.blocks.get("vault_block"),new FabricItemSettings()),
+				ItemGroups.TOOLS));
+		BUI.vault.toVault(new VaultItem("vault_item",
+				new Item(new FabricItemSettings()),
+				ItemGroups.TOOLS));
+
+		BUI.item.toItemGroup(TEST_ITEM, ItemGroups.TOOLS);
+		BUI.item.toItemGroup(TEST_BLOCK_ITEM, ItemGroups.TOOLS);
+		BUI.main.logInfo(BUI.main.name + ". By builders, for builders");
+		BUI.main.logDebug(BUI.main.version);
+		BUI.main.logWarn("Bui is in indev");
 	}
 }
