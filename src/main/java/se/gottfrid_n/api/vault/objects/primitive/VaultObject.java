@@ -1,3 +1,10 @@
 package se.gottfrid_n.api.vault.objects.primitive;
 
-public record VaultObject<T>(String id, T object) {}
+public class VaultObject<T> {
+	public final String id;
+	public final T object;
+	public VaultObject(String id, T object) {
+		this.id = id;
+		this.object = object;
+	}
+}

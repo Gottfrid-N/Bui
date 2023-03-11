@@ -14,35 +14,41 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Vault {
-	public final ItemRegistration item;
-	public final BlockRegistration block;
-	public final Main main;
-	private final LinkedList<VaultList> vault = new LinkedList<>();
-	public HashMap<String, Block> blocks = new HashMap<>();
-	public HashMap<String, Item> items = new HashMap<>();
+	final ItemRegistration item;
+	final BlockRegistration block;
+	final Main main;
 	public Vault(Main main, ItemRegistration item, BlockRegistration block) {
 		this.main = main;
 		this.item = item;
 		this.block = block;
 	}
+	private final LinkedList<VaultList> vault = new LinkedList<>();
+	public HashMap<String, Block> blocks = new HashMap<>();
+	public HashMap<String, Item> items = new HashMap<>();
 
-	public void toVault(VaultList list) {
+	public void add(VaultList list) {
 		vault.addFirst(list);
 	}
-	public void interpretVault() {
 
+	public void interpret() {
+		for(VaultList list : vault) {
+			interpretVaultList(list);
+		}
 	}
 	private void interpretVaultList(VaultList list) {
-		for(VaultObject<ItemWithGroup> vaultObject : list.items) {
-			String id = vaultObject.id();
-			ItemWithGroup item = vaultObject.object();
-			this.items.put(id, this.item.register(id, item.item()));
-			this.item.toItemGroup(this.items.get(id), item.itemGroup());
+		for(VaultObject<ItemWithGroup> item : list.items) {
+			interpretItem(item.id, item.object);
 		}
-		for(VaultObject<BlockWithItem> vaultObject : list.blocks) {
-			String id = vaultObject.id();
-			BlockWithItem block = vaultObject.object();
-			this.blocks.put(id, this.block.register(id, block.block()));
+		for(VaultObject<BlockWithItem> block : list.blocks) {
+			interpretBlock(block.id, block.object);
+			interpretItem(block.id, block.object.itemWithGroup);
 		}
+	}
+	private void interpretItem(String id, ItemWithGroup object) {
+		this.items.put(id, this.item.register(id, object.item));
+		this.item.toItemGroup(this.items.get(id), object.itemGroup);
+	}
+	private void interpretBlock(String id, BlockWithItem object) {
+		this.blocks.put(id, this.block.register(id, object.block));
 	}
 }

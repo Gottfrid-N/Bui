@@ -8,16 +8,18 @@ import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import se.gottfrid_n.api.Main;
 import se.gottfrid_n.api.Mod;
 import se.gottfrid_n.api.objects.Version;
 import se.gottfrid_n.api.vault.objects.VaultBlock;
 import se.gottfrid_n.api.vault.objects.VaultItem;
 
 public class Bui implements ModInitializer {
-	public static final Mod BUI = new Mod("Bui", true, true,
+	public static final Mod BUI = new Mod(new Main("Bui",
+			true, true,
 			new Version("bui",true,
 					"api-indev","0.0a.0b",
-					"fabric-0.73.2","1.19.3"));
+					"fabric-0.73.2","1.19.3")));
 	public static final Block TEST_BLOCK = BUI.block.register("test_block", new Block(FabricBlockSettings.of(Material.METAL)));
 	public static final Item TEST_BLOCK_ITEM = BUI.item.register("test_block", new BlockItem(TEST_BLOCK, new FabricItemSettings()));
 
@@ -25,14 +27,14 @@ public class Bui implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		BUI.vault.toVault(new VaultBlock("vault_block",
+		BUI.vault.add(new VaultBlock("vault_block",
 				new Block(FabricBlockSettings.of(Material.METAL)),
 				new BlockItem(BUI.vault.blocks.get("vault_block"),new FabricItemSettings()),
 				ItemGroups.TOOLS));
-		BUI.vault.toVault(new VaultItem("vault_item",
+		BUI.vault.add(new VaultItem("vault_item",
 				new Item(new FabricItemSettings()),
 				ItemGroups.TOOLS));
-
+		BUI.vault.interpret();
 		BUI.item.toItemGroup(TEST_ITEM, ItemGroups.TOOLS);
 		BUI.item.toItemGroup(TEST_BLOCK_ITEM, ItemGroups.TOOLS);
 		BUI.main.logInfo(BUI.main.name + ". By builders, for builders");
