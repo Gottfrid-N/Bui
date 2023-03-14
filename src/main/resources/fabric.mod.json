@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "bui",
+  "version": "${version}",
+
+  "name": "Bui",
+  "description": "By builders, for builders",
+  "authors": [
+    "Gottfrid_N"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Gottfrid-N/Bui-1.19.2-Fabric",
+    "sources": "https://github.com/Gottfrid-N/Bui-1.19.2-Fabric"
+  },
+
+  "license": "MIT",
+  "icon": "assets/bui/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "se.gottfrid_n.bui.Bui"
+    ]
+  },
+  "mixins": [
+    "bui.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.13",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
