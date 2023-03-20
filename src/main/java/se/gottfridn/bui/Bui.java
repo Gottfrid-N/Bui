@@ -1,4 +1,4 @@
-package se.gottfrid_n.bui;
+package se.gottfridn.bui;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -8,11 +8,11 @@ import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import se.gottfrid_n.api.Main;
-import se.gottfrid_n.api.Mod;
-import se.gottfrid_n.api.objects.Version;
-import se.gottfrid_n.api.vault.objects.VaultBlock;
-import se.gottfrid_n.api.vault.objects.VaultItem;
+import se.gottfridn.api.Main;
+import se.gottfridn.api.Mod;
+import se.gottfridn.api.objects.Version;
+import se.gottfridn.api.vault.objects.VaultBlock;
+import se.gottfridn.api.vault.objects.VaultItem;
 
 public class Bui implements ModInitializer {
 	public static final Mod BUI = new Mod(new Main(

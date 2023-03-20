@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "se.gottfrid_n.bui.mixin",
+  "package": "se.gottfridn.bui.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],

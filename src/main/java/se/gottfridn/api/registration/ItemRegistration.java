@@ -1,10 +1,10 @@
-package se.gottfrid_n.api.registration;
+package se.gottfridn.api.registration;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
-import se.gottfrid_n.api.Main;
+import se.gottfridn.api.Main;
 
 public class ItemRegistration extends Registration<Item> {
 	public ItemRegistration(Main main) {

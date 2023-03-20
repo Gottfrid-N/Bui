@@ -1,8 +1,8 @@
-package se.gottfrid_n.api;
+package se.gottfridn.api;
 
-import se.gottfrid_n.api.registration.BlockRegistration;
-import se.gottfrid_n.api.registration.ItemRegistration;
-import se.gottfrid_n.api.vault.Vault;
+import se.gottfridn.api.registration.BlockRegistration;
+import se.gottfridn.api.registration.ItemRegistration;
+import se.gottfridn.api.vault.Vault;
 
 public class Mod {
 	public final Main main;

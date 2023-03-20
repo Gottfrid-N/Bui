@@ -1,4 +1,4 @@
-package se.gottfrid_n.api.objects;
+package se.gottfridn.api.objects;
 
 public class Version {
 	public final String identifier; public final boolean stable;

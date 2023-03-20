@@ -1,4 +1,4 @@
-package se.gottfrid_n.api.vault.objects.primitive;
+package se.gottfridn.api.vault.objects.primitive;
 
 abstract class VaultObject {
 	public final String id;

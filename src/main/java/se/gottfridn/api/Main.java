@@ -1,8 +1,8 @@
-package se.gottfrid_n.api;
+package se.gottfridn.api;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se.gottfrid_n.api.objects.Version;
+import se.gottfridn.api.objects.Version;
 
 public class Main {
 	public final String name;		public final String identifier;

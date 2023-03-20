@@ -1,8 +1,8 @@
-package se.gottfrid_n.api.registration;
+package se.gottfridn.api.registration;
 
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import se.gottfrid_n.api.Main;
+import se.gottfridn.api.Main;
 
 public abstract class Registration<T> {
 	final Main main;

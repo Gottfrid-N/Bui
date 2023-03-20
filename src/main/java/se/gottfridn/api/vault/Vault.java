@@ -1,13 +1,13 @@
-package se.gottfrid_n.api.vault;
+package se.gottfridn.api.vault;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import se.gottfrid_n.api.registration.BlockRegistration;
-import se.gottfrid_n.api.registration.ItemRegistration;
-import se.gottfrid_n.api.registration.Registration;
-import se.gottfrid_n.api.vault.objects.primitive.VaultBlockObject;
-import se.gottfrid_n.api.vault.objects.primitive.VaultItemObject;
-import se.gottfrid_n.api.vault.objects.primitive.VaultList;
+import se.gottfridn.api.registration.BlockRegistration;
+import se.gottfridn.api.registration.ItemRegistration;
+import se.gottfridn.api.registration.Registration;
+import se.gottfridn.api.vault.objects.primitive.VaultBlockObject;
+import se.gottfridn.api.vault.objects.primitive.VaultItemObject;
+import se.gottfridn.api.vault.objects.primitive.VaultList;
 
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -1,8 +1,8 @@
-package se.gottfrid_n.api.registration;
+package se.gottfridn.api.registration;
 
 import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;
-import se.gottfrid_n.api.Main;
+import se.gottfridn.api.Main;
 
 public class BlockRegistration extends Registration<Block> {
 	public BlockRegistration(Main main) {
