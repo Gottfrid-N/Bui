@@ -4,12 +4,12 @@ import se.gottfridn.api.registration.BlockRegistration;
 import se.gottfridn.api.registration.ItemRegistration;
 
 @SuppressWarnings("unused")
-public class Mod {
+public class ApiMod {
 	public final Values values;
 	public final ItemRegistration item;
 	public final BlockRegistration block;
 
-	public Mod(Values values) {
+	public ApiMod(Values values) {
 		this.values = values;
 
 		this.item = new ItemRegistration(this.values);

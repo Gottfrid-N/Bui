@@ -6,7 +6,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import se.gottfridn.api.Values;
 
-public class ItemRegistration extends RegistrationImpl<Item> {
+public class ItemRegistration extends Registration<Item> {
 	public ItemRegistration(Values values) {
 		super(values, "item", Registries.ITEM);
 	}
