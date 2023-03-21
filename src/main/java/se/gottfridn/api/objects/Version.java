@@ -1,21 +1,26 @@
 package se.gottfridn.api.objects;
 
-public class Version {
-	public final String identifier; public final boolean stable;
-	public final String stage; 		public final String subStages;
-	public final String fabric; 	public final String minecraft;
-	public Version(String identifier, boolean stable,
-				   String stage, String subStages,
-				   String fabric, String minecraft) {
-		this.identifier = identifier; 	this.stable = stable;
-		this.stage = stage; 			this.subStages = subStages;
-		this.fabric = fabric; 			this.minecraft = minecraft;
+@SuppressWarnings("unused")
+public record Version(String identifier, boolean stable,
+					  String numericalIdentifier, byte major, byte medium, byte minor, char git,
+					  String minecraft, String fabricApi, String fabricLoader, String fabricYarn) {
+	public static final char SEPARATOR = '|';
+	public static final String HARD = "|>";
+	public static final char SOFT = '.';
+	public String getVerbose() {
+		return getIdentifier() + HARD + getNumerical() + HARD + minecraft() + HARD + getFabric();
 	}
-	@Override
-	public String toString() {
-		if(!stable) {
-			return identifier+"|"+"unstable"+"|>"+stage+"|"+subStages+"|>"+fabric+"|"+minecraft;
+	public String getIdentifier() {
+		if (stable()) {
+			return identifier() + SEPARATOR + "stable";
+		} else {
+			return identifier() + SEPARATOR + "unstable";
 		}
-		return identifier+"|"+"stable"+"|>"+stage+"|"+subStages+"|>"+fabric+"|"+minecraft;
+	}
+	public String getNumerical() {
+		return numericalIdentifier() + SEPARATOR + String.valueOf(major()) + SOFT + String.valueOf(medium()) + SOFT +  String.valueOf(minor()) + git();
+	}
+	public String getFabric() {
+		return fabricApi() + SEPARATOR + fabricLoader() + SEPARATOR + fabricYarn();
 	}
 }

@@ -8,31 +8,22 @@ import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import se.gottfridn.api.Main;
+import se.gottfridn.api.Values;
 import se.gottfridn.api.Mod;
 import se.gottfridn.api.objects.Version;
 import se.gottfridn.api.vault.objects.VaultBlock;
 import se.gottfridn.api.vault.objects.VaultItem;
 
 public class Bui implements ModInitializer {
-	public static final Mod BUI = new Mod(new Main(
-			"Bui",
-			true, true,
-			new Version("bui",true,
-					"api-indev","0.0a.0b",
-					"fabric-0.73.2","1.19.3")));
+	public static final Mod BUI = new Mod(new Values("Bui", true, true,
+			new Version("bui", false,
+					"indev", (byte) 0, (byte) 0, (byte) 1 , 'a',
+					"1.19.4",
+					"0.76.0+1.19.4", "0.14.17", "1.19.4+build.1"
+					)));
 	@Override
 	public void onInitialize() {
-		BUI.vault.add(new VaultBlock("vault_block",
-				new Block(FabricBlockSettings.of(Material.METAL)),
-				new BlockItem(BUI.vault.blocks.get("vault_block"),new FabricItemSettings()),
-				ItemGroups.TOOLS));
-		BUI.vault.add(new VaultBlock("vault_only_block",
-				new Block(FabricBlockSettings.of(Material.METAL)), null, null));
-		BUI.vault.add(new VaultItem("vault_item",
-				new Item(new FabricItemSettings()),
-				ItemGroups.TOOLS));
-		BUI.vault.interpret();
-		BUI.main.logDebug(BUI.main.version.toString());
+
+		BUI.logDebug(BUI.values.version.getVerbose());
 	}
 }
