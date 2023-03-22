@@ -11,6 +11,6 @@ import se.gottfridn.bui.Bui;
 public class BuiMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		Bui.BUI.values.logInfo("Mixin?");
+		Bui.VALUES.logInfo("Mixin?");
 	}
 }

@@ -24,9 +24,6 @@ public class Values {
 		this.debugInfo = debugInfo;
 
 		this.logger = LoggerFactory.getLogger(this.name);
-		if(!this.version.identifier().stable()) {
-			logWarning(this.name + " " + version + " is unstable!");
-		}
 	}
 	public void logInfo(String info) {
 		if(this.log) {

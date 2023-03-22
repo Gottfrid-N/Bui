@@ -3,7 +3,8 @@ package se.gottfridn.api.objects.version.sub;
 import se.gottfridn.api.objects.version.Separators;
 import se.gottfridn.api.objects.version.Version;
 
-public record Identifier(String identifier, boolean stable) implements SubVersion {
+public record IdentifierVersion(String identifier, boolean stable)
+implements Version.Sub{
 	@Override
 	public String getVersion() {
 		if (stable()) {
@@ -15,6 +16,6 @@ public record Identifier(String identifier, boolean stable) implements SubVersio
 
 	private String getVersion(String stable) {
 		return identifier() + Separators.MEDIUM +
-				stable;
+			stable;
 	}
 }

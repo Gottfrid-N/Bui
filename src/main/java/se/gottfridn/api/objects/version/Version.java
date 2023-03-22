@@ -1,12 +1,20 @@
 package se.gottfridn.api.objects.version;
 
-import se.gottfridn.api.objects.version.sub.SubVersion;
+import java.util.StringJoiner;
 
-public record Version(SubVersion[] subVersions) {
+public record Version(Version.Sub[] subVersions) {
 	public String getVerbose() {
-		for(SubVersion subVersion : subVersions()) {
-
+		StringJoiner version = new StringJoiner("");
+		for(Version.Sub subVersion : subVersions()) {
+			version.add(subVersion.getVersion() + Separators.HARD);
 		}
+		return version.toString().substring(0, version.length() - 2);
+	}
+	public String getSubVersion(int index) {
+		return subVersions[index].getVersion();
+	}
+	public interface Sub {
+		String getVersion();
 	}
 }
 
