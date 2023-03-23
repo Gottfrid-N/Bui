@@ -9,12 +9,13 @@ import se.gottfridn.api.objects.version.sub.NumericalVersion;
 import se.gottfridn.api.registration.BlockRegistration;
 import se.gottfridn.api.registration.ItemRegistration;
 
+@SuppressWarnings("unused")
 public class Bui
 implements ModInitializer {
 	public static final Values VALUES = new Values("Bui",
 			new Version(new Version.Sub[]{
 				new IdentifierVersion("bui", false),
-				new NumericalVersion("indev", 0, 0, 2, 'c'),
+				new NumericalVersion("indev", new int[]{0, 0, 1}, 'c'),
 				new FabricVersion("0.76.0+1.19.4", "0.14.17", "1.19.4+build.1")}),
 			true, true);
 	public static final BlockRegistration BLOCKS = new BlockRegistration(VALUES);
@@ -22,7 +23,7 @@ implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		VALUES.logDebug("Numerical Version = " + VALUES.version.getSubVersion(2));
+		VALUES.logDebug("Numerical Version = " + VALUES.version.getSubVersion(1));
 		VALUES.logDebug(VALUES.version.getVerbose());
 	}
 }

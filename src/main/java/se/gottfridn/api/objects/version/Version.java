@@ -5,7 +5,7 @@ import java.util.StringJoiner;
 public record Version(Version.Sub[] subVersions) {
 	public String getVerbose() {
 		StringJoiner version = new StringJoiner("");
-		for(Version.Sub subVersion : subVersions()) {
+		for (Version.Sub subVersion : subVersions()) {
 			version.add(subVersion.getVersion() + Separators.HARD);
 		}
 		return version.toString().substring(0, version.length() - 2);

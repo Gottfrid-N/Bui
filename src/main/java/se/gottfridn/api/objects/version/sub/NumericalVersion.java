@@ -3,13 +3,18 @@ package se.gottfridn.api.objects.version.sub;
 import se.gottfridn.api.objects.version.Separators;
 import se.gottfridn.api.objects.version.Version;
 
-public record NumericalVersion(String numericalIdentifier, int major, int medium, int minor, char git)
+import java.util.StringJoiner;
+
+public record NumericalVersion(String numericalIdentifier, int[] numerical, char git)
 		implements Version.Sub {
 	@Override
 	public String getVersion() {
+		StringJoiner version = new StringJoiner("");
+		for (int number : numerical()) {
+			version.add(String.valueOf(number) + Separators.SOFT);
+		}
 		return numericalIdentifier() + Separators.MEDIUM +
-				major() + Separators.SOFT +
-				medium() + Separators.SOFT +
-				minor() + git();
+				version
+				+ git();
 	}
 }
