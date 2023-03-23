@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
-import se.gottfridn.api.Values;
 
 public class ItemRegistration
 extends Registration<Item> {

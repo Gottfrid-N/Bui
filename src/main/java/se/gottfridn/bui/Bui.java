@@ -1,29 +1,44 @@
 package se.gottfridn.bui;
 
 import net.fabricmc.api.ModInitializer;
-import se.gottfridn.api.Values;
+import se.gottfridn.api.ModMain;
+import se.gottfridn.api.objects.DefaultLogger;
+import se.gottfridn.api.objects.EncapsulatedLogger;
 import se.gottfridn.api.objects.version.Version;
 import se.gottfridn.api.objects.version.sub.FabricVersion;
 import se.gottfridn.api.objects.version.sub.IdentifierVersion;
 import se.gottfridn.api.objects.version.sub.NumericalVersion;
-import se.gottfridn.api.registration.BlockRegistration;
-import se.gottfridn.api.registration.ItemRegistration;
 
 @SuppressWarnings("unused")
 public class Bui
-implements ModInitializer {
-	public static final Values VALUES = new Values("Bui",
-			new Version(new Version.Sub[]{
-				new IdentifierVersion("bui", false),
-				new NumericalVersion("indev", new int[]{0, 0, 1}, 'c'),
-				new FabricVersion("0.76.0+1.19.4", "0.14.17", "1.19.4+build.1")}),
-			true, true);
-	public static final BlockRegistration BLOCKS = new BlockRegistration(VALUES);
-	public static final ItemRegistration ITEMS = new ItemRegistration(VALUES);
+implements ModInitializer, ModMain {
+	@Override
+	public String name() {
+		return "bui";
+	}
+	@Override
+	public String identifier() {
+		return name().toLowerCase();
+	}
+
+	@Override
+	public Version version() {
+		return new Version(new Version.Sub[]{
+			new IdentifierVersion(identifier(), false),
+			new NumericalVersion("indev", new int[]{0, 0, 1}, 'd'),
+			new FabricVersion("0.76.0+1.19.4", "0.14.17", "1.19.4+build.1")});
+	}
+
+	@Override
+	public EncapsulatedLogger logger() {
+		return new DefaultLogger(identifier(), true, true);
+	}
 
 	@Override
 	public void onInitialize() {
-		VALUES.logDebug("Numerical Version = " + VALUES.version.getSubVersion(1));
-		VALUES.logDebug(VALUES.version.getVerbose());
+		logger().debug("Numerical Version = " + version().getSubVersion(1));
+		logger().debug(version().getVerbose());
 	}
+
+
 }

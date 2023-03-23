@@ -2,7 +2,6 @@ package se.gottfridn.api.registration;
 
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import se.gottfridn.api.Values;
 
 public abstract class Registration<T> {
 	final Values values;
