@@ -9,8 +9,10 @@ import se.gottfridn.bui.Bui;
 
 @Mixin(TitleScreen.class)
 public class BuiMixin {
+
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
 		Bui.VALUES.logInfo("Mixin?");
 	}
+
 }
