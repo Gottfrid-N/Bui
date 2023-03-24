@@ -14,10 +14,10 @@ public interface ModIdentifier {
 	/**
 	 * @return The name of the mod as a {@code String}
 	 */
-	String name();
+	String getName();
 
 	/**
 	 * @return The id of the mod as a {@code String}
 	 */
-	String id();
+	String getId();
 }

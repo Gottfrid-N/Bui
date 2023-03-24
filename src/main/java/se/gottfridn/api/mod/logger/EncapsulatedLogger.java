@@ -15,14 +15,14 @@ public interface EncapsulatedLogger {
 	/**
 	 * Logs a {@code String} using {@link org.slf4j.Logger#info} method.
 	 *
-	 * @param info The {@code String} to log.
+	 * @param info The {@code String} to be logged.
 	 */
 	void info(String info);
 
 	/**
 	 * Logs a {@code String} using {@link org.slf4j.Logger#debug} method that will only be visible in {@code debug.log}.
 	 *
-	 * @param debug The {@code String} to log.
+	 * @param debug The {@code String} to be logged.
 	 * @see EncapsulatedLogger#info
 	 */
 	void debug(String debug);
@@ -30,7 +30,7 @@ public interface EncapsulatedLogger {
 	/**
 	 * Logs a {@code String} using {@link org.slf4j.Logger#warn} method that will be indicated as orange in the log.
 	 *
-	 * @param warning The {@code String} to log.
+	 * @param warning The {@code String} to be logged.
 	 * @see EncapsulatedLogger#warning(String, Throwable)
 	 */
 	void warning(String warning);
@@ -38,15 +38,15 @@ public interface EncapsulatedLogger {
 	/**
 	 * Logs a {@code String} and throws a {@code Throwable} using {@link org.slf4j.Logger#warn} method that will be indicated as orange in the log.
 	 *
-	 * @param warning The {@code String} to log.
-	 * @param throwable The {@code Throwable} to throw.
+	 * @param warning The {@code String} to be logged.
+	 * @param throwable The {@code Throwable} to be thrown.
 	 */
 	void warning(String warning, Throwable throwable);
 
 	/**
 	 * Logs a {@code String} using {@link org.slf4j.Logger#error} method that will be indicated as red in the log.
 	 *
-	 * @param error The {@code String} to log.
+	 * @param error The {@code String} to be logged.
 	 * @see EncapsulatedLogger#error(String, Throwable)
 	 */
 	void error(String error);
@@ -54,8 +54,8 @@ public interface EncapsulatedLogger {
 	/**
 	 * Logs a {@code String} and throws a {@code Throwable} using {@link org.slf4j.Logger#error} method that will be indicated as red in the log.
 	 *
-	 * @param error The {@code String} to log.
-	 * @param throwable The {@code Throwable} to throw.
+	 * @param error The {@code String} to be logged.
+	 * @param throwable The {@code Throwable} to be thrown.
 	 */
 	void error(String error, Throwable throwable);
 }

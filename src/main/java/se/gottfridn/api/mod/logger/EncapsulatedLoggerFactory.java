@@ -7,7 +7,9 @@ import se.gottfridn.api.mod.identifier.ModIdentifier;
 /**
  *	The {@code EncapsulatedLoggerFactory} class is a factory for creating instances of {@code EncapsulatedLogger}.
  *
- * 	<p>The class provides the static method {@link EncapsulatedLoggerFactory#createLogger} for creating the instances of {@code EncapsulatedLogger} with specified Identifier and settings. </p>
+ * 	<p>The class provides the static method
+ * 	{@link EncapsulatedLoggerFactory#createLogger}
+ * 	for creating the instances of {@code EncapsulatedLogger} with specified Identifier and settings.</p>
  *
  * 	<p>The current logging framework used by this class is {@code slf4j}</p>
  *
@@ -15,11 +17,11 @@ import se.gottfridn.api.mod.identifier.ModIdentifier;
  * <pre>{@code
  * EncapsulatedLogger logger = EncapsulatedLoggerFactory.getLogger("myLogger", true, false);
  * logger.info("This is an info message!");
- * logger.debug("This message will only show up in debug.log!")
+ * logger.debug("This message will only show up in debug.log!");
  * logger.warning("This is a sPOoKy warning!");
- * logger.warning("This is a warning with a throwable!", NullPointerException)
- * logger.error("This is a dangerous error!!")
- * logger.error("This is a dangerous error that throws a StackOverflowError", StackOverflowError)
+ * logger.warning("This is a warning with a throwable!", NullPointerException);
+ * logger.error("This is a dangerous error!!");
+ * logger.error("This is a dangerous error that throws a StackOverflowError", StackOverflowError);
  * }</pre></p>
  *
  * @see org.slf4j.Logger
