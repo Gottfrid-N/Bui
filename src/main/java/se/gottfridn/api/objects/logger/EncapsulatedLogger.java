@@ -1,4 +1,4 @@
-package se.gottfridn.api.objects;
+package se.gottfridn.api.objects.logger;
 
 public interface EncapsulatedLogger {
 	void info(String info);

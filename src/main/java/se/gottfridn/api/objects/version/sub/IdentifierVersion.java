@@ -5,6 +5,7 @@ import se.gottfridn.api.objects.version.Version;
 
 public record IdentifierVersion(String identifier, boolean stable)
 implements Version.Sub{
+
 	@Override
 	public String getVersion() {
 		if (stable()) {
@@ -15,7 +16,7 @@ implements Version.Sub{
 	}
 
 	private String getVersion(String stable) {
-		return identifier() + Separators.MEDIUM +
-			stable;
+		return identifier() + Separators.MEDIUM + stable;
 	}
+
 }

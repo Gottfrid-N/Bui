@@ -6,15 +6,15 @@ import se.gottfridn.api.objects.version.Version;
 import java.util.StringJoiner;
 
 public record NumericalVersion(String numericalIdentifier, int[] numerical, char git)
-		implements Version.Sub {
+	implements Version.Sub {
+
 	@Override
 	public String getVersion() {
 		StringJoiner version = new StringJoiner("");
 		for (int number : numerical()) {
 			version.add(String.valueOf(number) + Separators.SOFT);
 		}
-		return numericalIdentifier() + Separators.MEDIUM +
-				version
-				+ git();
+		return numericalIdentifier() + Separators.MEDIUM + version + git();
 	}
+
 }

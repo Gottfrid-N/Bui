@@ -1,8 +1,9 @@
 package se.gottfridn.api.registration;
 
-import se.gottfridn.api.objects.EncapsulatedLogger;
+import se.gottfridn.api.objects.logger.EncapsulatedLogger;
 
-abstract class Registration<T> {
+public abstract class Registration<T>
+	implements Register<T> {
 
 	public final String identifier;
 	public final EncapsulatedLogger logger;
@@ -12,8 +13,12 @@ abstract class Registration<T> {
 		this.logger = logger;
 	}
 
-	public abstract T register(String id, T object);
+	public abstract void logRegister(String id, T object);
 
-	public abstract void logRegister(String id);
+	protected void logRegister(String id, String type) {
+		logger.info("Registering " + type + ": " + identifier + '/' + id);
+	}
+
+	protected abstract void logRegisterDebug(String id, T object);
 
 }

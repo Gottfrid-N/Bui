@@ -1,4 +1,4 @@
-package se.gottfridn.api.objects;
+package se.gottfridn.api.objects.logger;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
