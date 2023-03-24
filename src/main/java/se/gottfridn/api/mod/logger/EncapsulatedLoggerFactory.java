@@ -3,14 +3,30 @@ package se.gottfridn.api.mod.logger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
+/**
+ *	The {@code EncapsulatedLoggerFactory} class is a factory for {@code EncapsulatedLogger} that contains settings for logging.
+ * @see se.gottfridn.api.mod.logger.EncapsulatedLogger
+ * @see se.gottfridn.api.mod.logger.EncapsulatedLoggerFactory#EncapsulatedLoggerFactory(String, boolean, boolean)
+ */
 public class EncapsulatedLoggerFactory
-	implements EncapsulatedLogger {
+		implements EncapsulatedLogger {
 	private final Logger logger;
 	private final boolean log;
 	private final boolean debugInfo;
 
-	public EncapsulatedLoggerFactory(String identifier, boolean log, boolean debugInfo) {
-		this.logger = LoggerFactory.getLogger(identifier);
+
+	/**
+	 * Constructs a new {@code EncapsulatedLoggerFactory} instance with the specified options.
+	 *
+	 * @param id The id to be used for logging.
+	 * @param log A {@code boolean} indicating whether the logger should output to the log.
+	 * @param debugInfo A {@code boolean} that defines whether the {@link EncapsulatedLogger#debug} method should log with {@link EncapsulatedLogger#info} method instead.
+	 *
+	 * @see se.gottfridn.api.mod.logger.EncapsulatedLoggerFactory
+	 */
+	public EncapsulatedLoggerFactory(String id, boolean log, boolean debugInfo) {
+		this.logger = LoggerFactory.getLogger(id);
 		this.log = log;
 		this.debugInfo = debugInfo;
 	}
@@ -23,7 +39,7 @@ public class EncapsulatedLoggerFactory
 	@Override
 	public void debug(String debug) {
 		if (this.log) {
-			if(this.debugInfo) {
+			if (this.debugInfo) {
 				info(debug);
 			} else {
 				logger.debug(debug);
