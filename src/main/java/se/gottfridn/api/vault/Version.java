@@ -1,8 +1,7 @@
 package se.gottfridn.api.vault;
 
-
 /**
- *	The {@code Version} interface 
+ *	The {@code Version} interface
  */
 @SuppressWarnings("unused")
 public interface Version {

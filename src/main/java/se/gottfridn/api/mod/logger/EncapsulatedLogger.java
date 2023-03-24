@@ -6,6 +6,8 @@ package se.gottfridn.api.mod.logger;
  *
  * @implSpec Implementations are expected to use the {@code slf4j} library to log.
  * @implNote Implementations should provide a way to configure the behaviour.
+ *
+ * @see org.slf4j.Logger
  */
 
 @SuppressWarnings("unused")
