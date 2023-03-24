@@ -1,10 +1,9 @@
 package se.gottfridn.api.registration;
 
-import se.gottfridn.api.objects.logger.EncapsulatedLogger;
+import se.gottfridn.api.mod.logger.EncapsulatedLogger;
 
 public abstract class Registration<T>
 	implements Register<T> {
-
 	public final String identifier;
 	public final EncapsulatedLogger logger;
 
@@ -20,5 +19,4 @@ public abstract class Registration<T>
 	}
 
 	protected abstract void logRegisterDebug(String id, T object);
-
 }

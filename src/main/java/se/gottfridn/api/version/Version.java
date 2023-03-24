@@ -1,9 +1,8 @@
-package se.gottfridn.api.objects.version;
+package se.gottfridn.api.version;
 
 import java.util.StringJoiner;
 
 public record Version(Version.Sub[] subVersions) {
-
 	public String getVerbose() {
 		StringJoiner version = new StringJoiner("");
 		for (Version.Sub subVersion : subVersions()) {
@@ -20,6 +19,5 @@ public record Version(Version.Sub[] subVersions) {
 		String getVersion();
 
 	}
-
 }
 

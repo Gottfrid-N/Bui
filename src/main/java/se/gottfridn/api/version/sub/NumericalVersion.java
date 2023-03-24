@@ -1,13 +1,12 @@
-package se.gottfridn.api.objects.version.sub;
+package se.gottfridn.api.version.sub;
 
-import se.gottfridn.api.objects.version.Separators;
-import se.gottfridn.api.objects.version.Version;
+import se.gottfridn.api.version.Separators;
+import se.gottfridn.api.version.Version;
 
 import java.util.StringJoiner;
 
 public record NumericalVersion(String numericalIdentifier, int[] numerical, char git)
 	implements Version.Sub {
-
 	@Override
 	public String getVersion() {
 		StringJoiner version = new StringJoiner("");
@@ -16,5 +15,4 @@ public record NumericalVersion(String numericalIdentifier, int[] numerical, char
 		}
 		return numericalIdentifier() + Separators.MEDIUM + version + git();
 	}
-
 }

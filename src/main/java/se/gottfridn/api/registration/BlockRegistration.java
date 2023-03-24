@@ -4,11 +4,10 @@ import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import se.gottfridn.api.objects.logger.EncapsulatedLogger;
+import se.gottfridn.api.mod.logger.EncapsulatedLogger;
 
 public class BlockRegistration
 	extends Registration<Block> {
-
 	public BlockRegistration(String identifier, EncapsulatedLogger logger) {
 		super(identifier, logger);
 	}
@@ -29,5 +28,4 @@ public class BlockRegistration
 	protected void logRegisterDebug(String id, Block object) {
 		logger.debug("Binding block id: " + id + " to " + object);
 	}
-
 }
