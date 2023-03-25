@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "se.gottfridn.bui.BuiMod"
+      "se.gottfridn.bui.BuiMain"
     ]
   },
   "mixins": [

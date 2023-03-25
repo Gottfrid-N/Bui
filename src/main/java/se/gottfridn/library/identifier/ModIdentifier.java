@@ -1,5 +1,7 @@
 package se.gottfridn.library.identifier;
 
+import se.gottfridn.library.version.SubVersion;
+
 /**
  * The {@code ModIdentifier} interface represents a unique identifier for a mod.
  *
@@ -15,16 +17,31 @@ package se.gottfridn.library.identifier;
 @SuppressWarnings("unused")
 public interface ModIdentifier {
 	/**
-	 * Gets the name of the mod.
+	 * Gets the {@code name} of the mod.
 	 *
-	 * @return The name of the mod as a {@code String}
+	 * @return The {@code name} of the mod as a {@code String}
 	 */
 	String getName();
 
 	/**
-	 * Gets the id of the mod.
+	 * Gets the {@code id} of the mod.
 	 *
-	 * @return The id of the mod as a {@code String} in {@literal snake_case}
+	 * @return The {@code id} of the mod as a {@link String} in {@literal snake_case}
 	 */
 	String getId();
+
+
+	/**
+	 * Gets the {@code name} and {@code id} of the mod
+	 * in the format of {@link se.gottfridn.library.version.SubVersion}
+	 *
+	 * @return The {@code name} and {@code id} of the mod in the {@link se.gottfridn.library.version.SubVersion} format.
+	 *
+	 * @implSpec This method is expected to return a {@link String}
+	 * conforming to {@link se.gottfridn.library.version.SubVersion} standards.
+	 *
+	 * @see se.gottfridn.library.version.Version
+	 * @see SubVersion
+	 */
+	String getAsVersion();
 }

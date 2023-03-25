@@ -1,5 +1,5 @@
 package se.gottfridn.library.version;
 
-public interface SubVersion
-	extends Version {
+public interface SubVersion {
+	String getVersion();
 }
