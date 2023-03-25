@@ -9,10 +9,8 @@ import se.gottfridn.bui.BuiMod;
 
 @Mixin(TitleScreen.class)
 public class BuiMixin {
-
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		BuiMod.VALUES.logInfo("Mixin?");
+		BuiMod.LOGGER.info("Mixin?");
 	}
-
 }
