@@ -1,8 +1,8 @@
-package se.gottfridn.api.identifier;
+package se.gottfridn.library.identifier;
 
 
-import se.gottfridn.api.logger.EncapsulatedLogger;
-import se.gottfridn.api.logger.EncapsulatedLoggerFactory;
+import se.gottfridn.library.logger.EncapsulatedLogger;
+import se.gottfridn.library.logger.EncapsulatedLoggerFactory;
 
 /**
  *	The {@code ModIdentifierFactory} class is a factory for creating instances of {@code ModIdentifier}.

@@ -1,4 +1,4 @@
-package se.gottfridn.api.identifier;
+package se.gottfridn.library.identifier;
 
 /**
  * The {@code ModIdentifier} interface represents a unique identifier for a mod.

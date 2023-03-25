@@ -1,4 +1,4 @@
-package se.gottfridn.api.logger;
+package se.gottfridn.library.logger;
 
 /**
  * The {@code EncapsulatedLogger} interface contains encapsulated logging methods that can be used to log {@code String} messages with various levels of severity.

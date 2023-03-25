@@ -1,4 +1,4 @@
-package se.gottfridn.api.vault;
+package se.gottfridn.library.vault;
 
 /**
  *	The {@code Version} interface

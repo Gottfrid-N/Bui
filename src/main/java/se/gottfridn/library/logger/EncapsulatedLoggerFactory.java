@@ -1,4 +1,4 @@
-package se.gottfridn.api.logger;
+package se.gottfridn.library.logger;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,8 +25,8 @@ import org.slf4j.LoggerFactory;
  *
  * @see org.slf4j.Logger
  * @see org.slf4j.LoggerFactory
- * @see se.gottfridn.api.logger.EncapsulatedLogger
- * @see se.gottfridn.api.logger.EncapsulatedLoggerFactory#getLogger
+ * @see se.gottfridn.library.logger.EncapsulatedLogger
+ * @see se.gottfridn.library.logger.EncapsulatedLoggerFactory#getLogger
  * @see EncapsulatedLoggerImplementation
  */
 public class EncapsulatedLoggerFactory {
@@ -39,7 +39,7 @@ public class EncapsulatedLoggerFactory {
 	 *
 	 * @return The constructed {@code EncapsulatedLogger} instance.
 	 *
-	 * @see se.gottfridn.api.logger.EncapsulatedLoggerFactory
+	 * @see se.gottfridn.library.logger.EncapsulatedLoggerFactory
 	 * @see EncapsulatedLoggerImplementation
 	 */
 	public static EncapsulatedLogger getLogger(String name, boolean outputToLog, boolean useInfoForDebug) {

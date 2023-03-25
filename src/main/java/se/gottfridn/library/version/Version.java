@@ -1,4 +1,4 @@
-package se.gottfridn.api.version;
+package se.gottfridn.library.version;
 
 public interface Version {
 	String getValidVersion();
