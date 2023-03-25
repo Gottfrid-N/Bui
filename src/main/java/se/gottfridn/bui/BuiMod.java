@@ -1,10 +1,10 @@
 package se.gottfridn.bui;
 
 import net.fabricmc.api.ModInitializer;
-import se.gottfridn.api.mod.identifier.ModIdentifier;
-import se.gottfridn.api.mod.identifier.ModIdentifierFactory;
-import se.gottfridn.api.mod.logger.EncapsulatedLogger;
-import se.gottfridn.api.mod.logger.EncapsulatedLoggerFactory;
+import se.gottfridn.api.identifier.ModIdentifier;
+import se.gottfridn.api.identifier.ModIdentifierFactory;
+import se.gottfridn.api.logger.EncapsulatedLogger;
+import se.gottfridn.api.logger.EncapsulatedLoggerFactory;
 
 public final class BuiMod
 	implements ModInitializer {
