@@ -1,6 +1,9 @@
 package se.gottfridn.library.identifier;
 
+//todo javadocs
+
 import se.gottfridn.library.version.SubVersion;
+import se.gottfridn.library.version.Version;
 
 /**
  * The {@code ModIdentifier} interface represents a unique identifier for a mod.
@@ -30,18 +33,5 @@ public interface ModIdentifier {
 	 */
 	String getId();
 
-
-	/**
-	 * Gets the {@code name} and {@code id} of the mod
-	 * in the format of {@link se.gottfridn.library.version.SubVersion}
-	 *
-	 * @return The {@code name} and {@code id} of the mod in the {@link se.gottfridn.library.version.SubVersion} format.
-	 *
-	 * @implSpec This method is expected to return a {@link String}
-	 * conforming to {@link se.gottfridn.library.version.SubVersion} standards.
-	 *
-	 * @see se.gottfridn.library.version.Version
-	 * @see SubVersion
-	 */
-	String getAsVersion();
+	String getStability();
 }

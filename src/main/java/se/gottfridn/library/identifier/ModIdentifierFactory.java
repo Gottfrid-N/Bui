@@ -3,11 +3,9 @@ package se.gottfridn.library.identifier;
 
 import se.gottfridn.library.logger.EncapsulatedLogger;
 import se.gottfridn.library.logger.EncapsulatedLoggerFactory;
-import se.gottfridn.library.version.Separators;
-import se.gottfridn.library.version.SubVersion;
+import se.gottfridn.library.version.VersionFormat;
 
-import java.util.StringJoiner;
-
+//todo Javadocs
 /**
  *	The {@code ModIdentifierFactory} class is a factory for creating instances of {@code ModIdentifier}.
  * <p>
@@ -79,6 +77,7 @@ public class ModIdentifierFactory {
 	 * @see ModIdentifierFactory#getIdentifier(String, Stability)
 	 */
 	public static ModIdentifier getIdentifier(String name, String id, Stability stability) {
+		// checks if id is in snake_case
 		if (!id.matches("^[a-z0-9]+(_[a-z0-9]+)*$")) {
 			logger.error("Illegal id: " + id + " doesn't conform to snake_case format!", new IllegalArgumentException());
 		}
@@ -86,15 +85,15 @@ public class ModIdentifierFactory {
 	}
 
 	static final class ModIdentifierImplementation
-		implements ModIdentifier{
+			implements ModIdentifier {
 		private final String name;
 		private final String id;
-		private final String stability;
+		private final Stability stability;
 
 		public ModIdentifierImplementation(String name, String id, Stability stability) {
 			this.name = name;
 			this.id = id;
-			this.stability = String.valueOf(stability).toLowerCase();
+			this.stability = stability;
 		}
 
 		@Override
@@ -108,11 +107,8 @@ public class ModIdentifierFactory {
 		}
 
 		@Override
-		public String getAsVersion() {
-			StringJoiner version = new StringJoiner(Separators.MEDIUM);
-			version.add(getName());
-			version.add(stability);
-			return version.toString();
+		public String getStability() {
+			return stability.stability;
 		}
 	}
 }
