@@ -2,9 +2,6 @@ package se.gottfridn.library.identifier;
 
 //todo javadocs
 
-import se.gottfridn.library.version.SubVersion;
-import se.gottfridn.library.version.Version;
-
 /**
  * The {@code ModIdentifier} interface represents a unique identifier for a mod.
  *

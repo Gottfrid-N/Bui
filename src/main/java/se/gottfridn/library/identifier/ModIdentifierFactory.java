@@ -3,7 +3,6 @@ package se.gottfridn.library.identifier;
 
 import se.gottfridn.library.logger.EncapsulatedLogger;
 import se.gottfridn.library.logger.EncapsulatedLoggerFactory;
-import se.gottfridn.library.version.VersionFormat;
 
 //todo Javadocs
 /**

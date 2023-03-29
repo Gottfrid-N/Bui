@@ -59,6 +59,8 @@ public class EncapsulatedLoggerFactory {
 	 * @see EncapsulatedLoggerFactory#getLogger(String, boolean, boolean)
 	 * @see EncapsulatedLoggerImplementation#EncapsulatedLoggerImplementation(String, boolean, boolean)  EncapsulatedLoggerImplementation
 	 */
+
+	@SuppressWarnings("unused")
 	static final class EncapsulatedLoggerImplementation
 			implements EncapsulatedLogger {
 		private final Logger logger;

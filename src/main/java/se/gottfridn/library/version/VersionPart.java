@@ -1,11 +1,8 @@
 package se.gottfridn.library.version;
 
-public class VersionPart {
-	public final String part;
-	public final Separator separator;
-
-	public VersionPart(String part, Separator separator) {
-		this.part = part;
-		this.separator = separator;
+public record VersionPart(String part, Separator separator) {
+	@Override
+	public String toString() {
+		return part() + separator().toString();
 	}
 }
