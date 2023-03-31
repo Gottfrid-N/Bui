@@ -7,20 +7,24 @@ import java.util.StringJoiner;
 public class SubVersionFactory {
 	public static SubVersion getNumericalSubVersion(String numericalIdentifier, Integer[] numericalVersion, Character git) {
 		StringJoiner numericalVersionJoiner = new StringJoiner(Separator.SOFT.toString());
-		for (Integer integer : numericalVersion) {
-			numericalVersionJoiner.add(integer.toString());
+		for (Integer number : numericalVersion) {
+			numericalVersionJoiner.add(number.toString());
 		}
-		VersionPart[] parts = {
-			new VersionPart(numericalIdentifier, Separator.MEDIUM),
-			new VersionPart(numericalVersionJoiner.toString(), Separator.MEDIUM),
-			new VersionPart(git.toString(), Separator.END)};
+
+		VersionPart numericalIdentifierPart = new VersionPart(numericalIdentifier, Separator.MEDIUM);
+		VersionPart numericalVersionPart = new VersionPart(numericalVersionJoiner.toString(), Separator.MEDIUM);
+		VersionPart gitPart = new VersionPart(git.toString(), Separator.END);
+
+		VersionPart[] parts = {numericalIdentifierPart, numericalVersionPart, gitPart};
+
 		return getSubVersion(parts);
 	}
 
 	public static SubVersion getIdentifierSubVersion(ModIdentifier identifier) {
-		VersionPart[] parts = {
-			new VersionPart(identifier.getId(), Separator.MEDIUM),
-			new VersionPart(identifier.getStability(), Separator.END)};
+		VersionPart idPart = new VersionPart(identifier.getId(), Separator.MEDIUM);
+		VersionPart stabilityPart = new VersionPart(identifier.getStability(), Separator.END);
+		VersionPart[] parts = {idPart, stabilityPart};
+
 		return new SubVersionImplementation(parts);
 	}
 
@@ -45,7 +49,7 @@ public class SubVersionFactory {
 		public String toVersionFormat() {
 			StringBuilder builder = new StringBuilder();
 			for (VersionPart part : parts) {
-				builder.append(part.toString());
+				builder.append(part.toVersionFormat());
 			}
 			return builder.toString();
 		}

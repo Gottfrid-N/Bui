@@ -1,17 +1,16 @@
 package se.gottfridn.library.identifier;
 
-//todo javadocs
-
 /**
- * The {@code ModIdentifier} interface represents a unique identifier for a mod.
+ * This interface represents a unique identifier for a mod.
+ *	<p>
+ *	   A {@code ModIdentifier} contains three parts: a {@code name}, {@code id} and {@code stability}.
+ *	</p>
  *
- * <p>
- *     A {@code ModIdentifier} consists of two parts: a {@code name} and an {@code id}.
- * The {@code name} is a human-readable {@link String},
- * while the {@code id} is used to identify the mod in code, such as in the identifier for an item.
- * </p>
  *
- * @implSpec The {@code id} is expected to be in {@literal snake_case}
+ * @implSpec The {@code id} is expected to be returned in {@literal snake_case}
+ * @implNote The {@code stability} should use the {@link Stability} enum for its levels.
+ *
+ * @see Stability
  */
 
 @SuppressWarnings("unused")
@@ -30,5 +29,10 @@ public interface ModIdentifier {
 	 */
 	String getId();
 
+	/**
+	 * Gets the {@code stability} of the mod as a string.
+	 *
+	 * @return The {@code id} of the mod as a {@link String} in {@literal snake_case}
+	 */
 	String getStability();
 }

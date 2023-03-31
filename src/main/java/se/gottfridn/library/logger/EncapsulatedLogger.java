@@ -1,11 +1,7 @@
 package se.gottfridn.library.logger;
 
 /**
- * The {@code EncapsulatedLogger} interface contains encapsulated logging methods that can be used to log {@code String} messages with various levels of severity.
- * <p>
- *     Messages logged using this interface should follow {@code slf4j} format.
- * </p>
- *
+ * This interface contains encapsulated logging methods that can be used to log {@code String} messages with various levels of severity.
  * @implSpec Implementations are expected to use the {@link org.slf4j.Logger}.
  * @implNote Implementations should provide a way to configure the behaviour.
  *

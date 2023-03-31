@@ -1,8 +1,9 @@
 package se.gottfridn.library.version;
 
-public record VersionPart(String part, Separator separator) {
+public record VersionPart(String part, Separator separator)
+	implements VersionFormat {
 	@Override
-	public String toString() {
+	public String toVersionFormat() {
 		return part() + separator().toString();
 	}
 }

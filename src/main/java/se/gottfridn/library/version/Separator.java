@@ -2,7 +2,6 @@ package se.gottfridn.library.version;
 
 import org.jetbrains.annotations.Nullable;
 
-
 public enum Separator {
 	HARD('|'),
 	MEDIUM('-'),

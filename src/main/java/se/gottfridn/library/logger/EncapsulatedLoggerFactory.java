@@ -49,11 +49,11 @@ public class EncapsulatedLoggerFactory {
 	/**
 	 * The {@code EncapsulatedLoggerImplementation} class is an implementation of the interface {@link EncapsulatedLogger}.
 	 * <p>
-	 * This class provides options to disable logging and use {@link Logger#info} instead of {@link Logger#debug}.
+	 * The class provides options to disable logging and use {@link Logger#info} instead of {@link Logger#debug}.
 	 * This is done because in a development environment you cant see what {@link Logger#debug} outputs.
 	 * </p>
 	 *
-	 * @apiNote This implementation uses the {@link Logger} api
+	 * @apiNote This implementation uses the {@link org.slf4j.Logger} api
 	 * @see EncapsulatedLogger
 	 * @see EncapsulatedLoggerFactory
 	 * @see EncapsulatedLoggerFactory#getLogger(String, boolean, boolean)

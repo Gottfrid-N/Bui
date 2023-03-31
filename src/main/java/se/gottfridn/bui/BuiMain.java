@@ -14,10 +14,11 @@ import se.gottfridn.library.version.VersionFactory;
 public final class BuiMain
 	implements ModInitializer {
 	public static final ModIdentifier IDENTIFIER = ModIdentifierFactory.getIdentifier("Bui", Stability.DEV);
-	public static final Version VERSION = VersionFactory.getVersion(new SubVersion[]{
-		SubVersionFactory.getIdentifierSubVersion(IDENTIFIER),
-		SubVersionFactory.getNumericalSubVersion("libdev", new Integer[]{0, 0, 1}, 'a')});
 	public static final EncapsulatedLogger LOGGER = EncapsulatedLoggerFactory.getLogger(IDENTIFIER.getName(), true, true);
+
+	private static final SubVersion IDENTIFIER_SUB_VERSION = SubVersionFactory.getIdentifierSubVersion(IDENTIFIER);
+	private static final SubVersion NUMERICAL_SUB_VERSION = SubVersionFactory.getNumericalSubVersion("libdev", new Integer[]{0, 0, 1}, 'a');
+	public static final Version VERSION = VersionFactory.getVersion(new SubVersion[]{IDENTIFIER_SUB_VERSION, NUMERICAL_SUB_VERSION});
 
 	@Override
 	public void onInitialize() {
