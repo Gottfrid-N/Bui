@@ -13,7 +13,7 @@ package se.gottfridn.library.identifier;
  * @see Stability
  */
 
-@SuppressWarnings("unused")
+
 public interface ModIdentifier {
 	/**
 	 * Gets the {@code name} of the mod.

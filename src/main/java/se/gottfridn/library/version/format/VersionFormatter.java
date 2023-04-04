@@ -2,6 +2,13 @@ package se.gottfridn.library.version.format;
 
 import java.util.StringJoiner;
 
+/**
+ *
+ *
+ * @param version
+ * @param separator
+ * @param <T>
+ */
 public record VersionFormatter<T extends VersionFormat>(T[] version, Separator separator) {
     @Override
     public String toString() {

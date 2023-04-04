@@ -35,7 +35,7 @@ import se.gottfridn.library.logger.factory.EncapsulatedLoggerFactory;
  * @see ModIdentifierFactory#getIdentifier(String, String, Stability)
  */
 
-@SuppressWarnings("unused")
+
 public class ModIdentifierFactory {
 	private static final EncapsulatedLogger logger = EncapsulatedLoggerFactory.getLogger("mod_identifier_factory", true, false);
 
@@ -83,50 +83,21 @@ public class ModIdentifierFactory {
 		return new ModIdentifierImplementation(name, id, stability);
 	}
 
-	/**
-	 * The {@code ModIdentifierImplementation} class is an implementation of the interface {@link ModIdentifier}.
-	 *
-	 * @apiNote The {@code stability} uses the {@link Stability} enum.
-	 *
-	 * @see se.gottfridn.library.identifier.ModIdentifier
-	 * @see ModIdentifierImplementation#ModIdentifierImplementation(String, String, Stability)
-	 * @see ModIdentifierFactory#getIdentifier(String, String, Stability)
-	 */
-	static final class ModIdentifierImplementation
+	private record ModIdentifierImplementation(String name, String id, Stability stability)
 			implements ModIdentifier {
-		private final String name;
-		private final String id;
-		private final Stability stability;
-
-		/**
-		 * Constructs a new {@code ModIdentifierImplementation} instance with the given {@code name}, {@code id} and {@code stability}.
-		 *
-		 * @param name The {@code name} of the {@code Identifier}.
-		 * @param id The {@code id} of the {@code Identifier}.
-		 * @param stability The {@code stability} of the {@code Identifier}.
-		 *
-		 * @see ModIdentifierImplementation
-		 * @see ModIdentifierFactory
-		 */
-		public ModIdentifierImplementation(String name, String id, Stability stability) {
-			this.name = name;
-			this.id = id;
-			this.stability = stability;
-		}
-
 		@Override
 		public String getId() {
-			return id;
+			return id();
 		}
 
 		@Override
 		public String getName() {
-			return name;
+			return name();
 		}
 
 		@Override
 		public String getStability() {
-			return stability.stability;
+			return stability().toString();
 		}
 	}
 }

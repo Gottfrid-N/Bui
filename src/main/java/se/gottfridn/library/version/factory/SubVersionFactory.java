@@ -9,17 +9,21 @@ import java.util.StringJoiner;
 
 public class SubVersionFactory {
 	public static SubVersion getIdentifierSubVersion(ModIdentifier identifier) {
-		VersionPart idPart = VersionPartFactory.getStringVersionPart(identifier.getId());
-		VersionPart stabilityPart = VersionPartFactory.getStringVersionPart(identifier.getStability());
+		VersionPart idPart = VersionPartFactory.getStringPart(identifier.getId());
+		VersionPart stabilityPart = VersionPartFactory.getStringPart(identifier.getStability());
 		VersionPart[] parts = new VersionPart[]{idPart, stabilityPart};
 		return getSubVersion(parts);
 	}
 
 	public static SubVersion getNumericalSubVersion(String numericalIdentifier, Number[] numericalVersion) {
-		VersionPart identifierPart = VersionPartFactory.getStringVersionPart(numericalIdentifier);
-		VersionPart numericalPart = VersionPartFactory.getNumericalVersionPart(numericalVersion);
+		VersionPart identifierPart = VersionPartFactory.getStringPart(numericalIdentifier);
+		VersionPart numericalPart = VersionPartFactory.getNumericalPart(numericalVersion);
 		VersionPart[] parts = new VersionPart[]{identifierPart, numericalPart};
 		return getSubVersion(parts);
+	}
+
+	public static SubVersion getSubVersion(VersionPart part) {
+		return getSubVersion(new VersionPart[]{part});
 	}
 
 	public static SubVersion getSubVersion(VersionPart[] parts) {

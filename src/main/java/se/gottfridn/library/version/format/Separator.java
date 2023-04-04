@@ -3,6 +3,7 @@ package se.gottfridn.library.version.format;
 import se.gottfridn.library.version.SubVersion;
 import se.gottfridn.library.version.Version;
 import se.gottfridn.library.version.VersionPart;
+import se.gottfridn.library.version.VersionSubPart;
 
 /**
  * This enum contains different {@code separators} for {@link VersionFormat}.
@@ -24,9 +25,9 @@ public enum Separator {
 	VERSION_PART('-'),
 
 	/**
-	 * This {@code separator} is used between each {@link String} in a {@link VersionPart}
+	 * This {@code separator} is used between each {@link VersionSubPart} in a {@link VersionPart}
 	 */
-	SUB_VERSION_PART('.');
+	VERSION_SUB_PART('.');
 
 	private final Character separator;
 

@@ -18,19 +18,15 @@ public final class BuiMain
 
 	private static final SubVersion IDENTIFIER_SUB_VERSION = SubVersionFactory.getIdentifierSubVersion(IDENTIFIER);
 
-	private static final String NUMERICAL_IDENTIFIER = "libdev1237891237891237899123789781238927137812397";
-	private static final Number MAJOR = 0;
-	private static final Number MEDIUM = 1;
-	private static final Number MINOR = 1;
-	private static final Number GIT = 1;
-	private static final Number[] NUMERICAL_PART = {MAJOR, MEDIUM, MINOR, GIT};
+	private static final String NUMERICAL_IDENTIFIER = "libdev";
+	private static final Number[] NUMERICAL_PART = {0, 1, 1, 1};
 	private static final SubVersion NUMERICAL_SUB_VERSION = SubVersionFactory.getNumericalSubVersion(NUMERICAL_IDENTIFIER, NUMERICAL_PART);
 
 	public static final Version VERSION = VersionFactory.getVersion(new SubVersion[]{IDENTIFIER_SUB_VERSION, NUMERICAL_SUB_VERSION});
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Bui!");
+		LOGGER.info(IDENTIFIER.getId() + "!");
 		LOGGER.debug(VERSION.toVersionFormat());
 	}
 }

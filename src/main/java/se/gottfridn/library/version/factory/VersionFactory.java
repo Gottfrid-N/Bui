@@ -6,6 +6,10 @@ import se.gottfridn.library.version.format.Separator;
 import se.gottfridn.library.version.format.VersionFormatter;
 
 public class VersionFactory {
+	public static Version getVersion(SubVersion subVersion) {
+		return getVersion(new SubVersion[]{subVersion});
+	}
+
 	public static Version getVersion(SubVersion[] subVersions) {
 		return new VersionImplementation(subVersions);
 	}

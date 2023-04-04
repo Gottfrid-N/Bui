@@ -9,7 +9,7 @@ package se.gottfridn.library.identifier;
  * @see ModIdentifier
  */
 
-@SuppressWarnings("unused")
+
 public enum Stability {
 	/**
 	 * This {@code level} should be used when a {@code mod} is stable and released.
@@ -37,9 +37,14 @@ public enum Stability {
 	 */
 	UNSTABLE("unstable");
 
-	public final String stability;
+	private final String stability;
 
 	Stability(String stability) {
 		this.stability = stability;
+	}
+
+	@Override
+	public String toString() {
+		return stability;
 	}
 }

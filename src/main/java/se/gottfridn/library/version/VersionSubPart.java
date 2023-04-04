@@ -11,8 +11,13 @@ import se.gottfridn.library.version.format.VersionFormat;
  *     so {@link Version#toVersionFormat()} can be used to get a {@link String} representation of the {@code VersionPart}.
  * </p>
  */
-public interface SubVersionPart
+public interface VersionSubPart
     extends VersionFormat {
+    /**
+     * Converts the {@link String} to a formatted {@link String}.
+     *
+     * @return The formatted {@link String}
+     */
     @Override
     String toVersionFormat();
 }

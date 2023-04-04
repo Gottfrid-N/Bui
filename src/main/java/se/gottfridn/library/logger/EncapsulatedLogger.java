@@ -8,7 +8,7 @@ package se.gottfridn.library.logger;
  * @see org.slf4j.Logger
  */
 
-@SuppressWarnings("unused")
+
 public interface EncapsulatedLogger {
 	/**
 	 * Logs the given {@code String}
