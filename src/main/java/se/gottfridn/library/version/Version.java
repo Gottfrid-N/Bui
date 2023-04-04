@@ -1,14 +1,16 @@
 package se.gottfridn.library.version;
 
+import se.gottfridn.library.version.format.VersionFormat;
+
 /**
  * This interface represents the {@code Version} of a mod using a {@link SubVersion} array,
  * <p>
- *     The {@code Version} interface defines the
- *     {@link Version#getSubVersions()} method for getting the
+ *     This interface defines the
+ *     {@link Version#getSubVersions()} method for accessing the
  *     {@link SubVersion} array of the {@code Version}.
  * </p><p>
- *     It extends {@link VersionFormat},
- *     so you can use {@link Version#toVersionFormat()} to get a {@link String} representation of the version.
+ *     This extends {@link VersionFormat},
+ *     so {@link Version#toVersionFormat()} can be used to get a {@link String} representation of the version.
  * </p>
  *
  * @see SubVersion

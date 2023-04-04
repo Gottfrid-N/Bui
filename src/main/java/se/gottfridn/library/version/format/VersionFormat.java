@@ -1,4 +1,8 @@
-package se.gottfridn.library.version;
+package se.gottfridn.library.version.format;
+
+import se.gottfridn.library.version.SubVersion;
+import se.gottfridn.library.version.Version;
+import se.gottfridn.library.version.VersionPart;
 
 /**
  * This interface defines a method for converting a version into a formatted string
@@ -12,7 +16,7 @@ package se.gottfridn.library.version;
  */
 
 @FunctionalInterface
-interface VersionFormat {
+public interface VersionFormat {
 	/**
 	 * Returns a formatted {@link String}
 	 *

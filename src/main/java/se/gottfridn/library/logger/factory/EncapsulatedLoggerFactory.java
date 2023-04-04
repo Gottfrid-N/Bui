@@ -1,14 +1,15 @@
-package se.gottfridn.library.logger;
+package se.gottfridn.library.logger.factory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import se.gottfridn.library.logger.EncapsulatedLogger;
 
 /**
- *	The {@code EncapsulatedLoggerFactory} class is a factory for creating instances of {@code EncapsulatedLogger}.
+ *	This class is a factory for creating instances of {@link EncapsulatedLogger}.
  *
- * 	<p>The class provides the static method
+ * 	<p>This class provides the static method
  * 	{@link EncapsulatedLoggerFactory#getLogger}
- * 	for creating the instances of {@code EncapsulatedLogger} with specified Identifier and settings.</p>
+ * 	for creating the instances of {@link EncapsulatedLogger} with specified Identifier and settings.</p>
  *
  * <p>Usage example:
  * <blockquote><pre>
@@ -26,7 +27,7 @@ import org.slf4j.LoggerFactory;
  * @see org.slf4j.Logger
  * @see org.slf4j.LoggerFactory
  * @see se.gottfridn.library.logger.EncapsulatedLogger
- * @see se.gottfridn.library.logger.EncapsulatedLoggerFactory#getLogger
+ * @see EncapsulatedLoggerFactory#getLogger
  * @see EncapsulatedLoggerImplementation
  */
 public class EncapsulatedLoggerFactory {
@@ -39,7 +40,7 @@ public class EncapsulatedLoggerFactory {
 	 *
 	 * @return The constructed {@code EncapsulatedLogger} instance.
 	 *
-	 * @see se.gottfridn.library.logger.EncapsulatedLoggerFactory
+	 * @see EncapsulatedLoggerFactory
 	 * @see EncapsulatedLoggerImplementation
 	 */
 	public static EncapsulatedLogger getLogger(String name, boolean outputToLog, boolean useInfoForDebug) {

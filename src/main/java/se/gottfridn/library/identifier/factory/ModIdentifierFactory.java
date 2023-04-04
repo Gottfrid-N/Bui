@@ -1,8 +1,10 @@
-package se.gottfridn.library.identifier;
+package se.gottfridn.library.identifier.factory;
 
 
+import se.gottfridn.library.identifier.ModIdentifier;
+import se.gottfridn.library.identifier.Stability;
 import se.gottfridn.library.logger.EncapsulatedLogger;
-import se.gottfridn.library.logger.EncapsulatedLoggerFactory;
+import se.gottfridn.library.logger.factory.EncapsulatedLoggerFactory;
 
 /**
  *	This class is a factory for creating instances of {@link ModIdentifier}.
@@ -88,7 +90,7 @@ public class ModIdentifierFactory {
 	 *
 	 * @see se.gottfridn.library.identifier.ModIdentifier
 	 * @see ModIdentifierImplementation#ModIdentifierImplementation(String, String, Stability)
-	 * @see se.gottfridn.library.identifier.ModIdentifierFactory#getIdentifier(String, String, Stability)
+	 * @see ModIdentifierFactory#getIdentifier(String, String, Stability)
 	 */
 	static final class ModIdentifierImplementation
 			implements ModIdentifier {
