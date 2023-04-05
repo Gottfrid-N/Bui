@@ -6,12 +6,11 @@ import se.gottfridn.library.logger.EncapsulatedLogger;
 
 /**
  *	This class is a factory for creating instances of {@link EncapsulatedLogger}.
- *
- * 	<p>This class provides the static method
- * 	{@link EncapsulatedLoggerFactory#getLogger}
- * 	for creating the instances of {@link EncapsulatedLogger} with specified Identifier and settings.</p>
- *
- * <p>Usage example:
+ *	<p>
+ *	   This class provides the static method
+ *	   {@link EncapsulatedLoggerFactory#getLogger}
+ *	   for creating the instances of {@link EncapsulatedLogger} with specified Identifier and settings.
+ * 	</p><p>Usage example:
  * <blockquote><pre>
  * EncapsulatedLogger logger() = EncapsulatedLoggerFactory.getLogger("myLogger", true, false);
  * logger().info("This is an info message!");
@@ -22,8 +21,6 @@ import se.gottfridn.library.logger.EncapsulatedLogger;
  * logger().error("This is a dangerous error that throws a StackOverflowError", StackOverflowError);
  * </pre></blockquote></p>
  *
- * @apiNote The implementation for this is {@link EncapsulatedLoggerImplementation}
- *
  * @see org.slf4j.Logger
  * @see org.slf4j.LoggerFactory
  * @see se.gottfridn.library.logger.EncapsulatedLogger
@@ -32,13 +29,13 @@ import se.gottfridn.library.logger.EncapsulatedLogger;
  */
 public class EncapsulatedLoggerFactory {
 	/**
-	 * Constructs a new {@code EncapsulatedLogger} instance with the specified options.
+	 * Constructs a new {@link EncapsulatedLogger} instance with the specified options.
 	 *
-	 * @param name The name to be used for logging.
-	 * @param outputToLog A {@code boolean} indicating whether the logger() should output to the log.
-	 * @param useInfoForDebug A {@code boolean} that defines whether the {@link EncapsulatedLogger#debug} method should log with {@link EncapsulatedLogger#info} method instead.
+	 * @param name The {@code name} to be used for logging.
+	 * @param outputToLog A {@link Boolean} indicating whether the logger() should output to the log.
+	 * @param useInfoForDebug A {@link Boolean} that defines whether the {@link EncapsulatedLogger#debug} method should log with {@link EncapsulatedLogger#info} method instead.
 	 *
-	 * @return The constructed {@code EncapsulatedLogger} instance.
+	 * @return The constructed {@link EncapsulatedLogger} instance.
 	 *
 	 * @see EncapsulatedLoggerFactory
 	 * @see EncapsulatedLoggerImplementation

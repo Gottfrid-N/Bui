@@ -28,8 +28,6 @@ import se.gottfridn.library.logger.factory.EncapsulatedLoggerFactory;
  * String name = identifier.getName();
  * </pre></blockquote></p>
  *
- * @apiNote The implementation for this is {@link ModIdentifierImplementation}
- *
  * @see ModIdentifier
  * @see ModIdentifierFactory#getIdentifier(String, Stability)
  * @see ModIdentifierFactory#getIdentifier(String, String, Stability)
@@ -61,8 +59,7 @@ public class ModIdentifierFactory {
 	}
 
 	/**
-	 * Constructs a new {@link ModIdentifier} instance using {@link ModIdentifierImplementation}
-	 * with the specified {@code name}, {@code id} and {@code stability}.
+	 * Constructs a new {@link ModIdentifier} instance with the specified {@code name}, {@code id} and {@code stability}.
 	 *
 	 * @param name The  {@code name} to be used.
 	 * @param id The {@code id} to be used.

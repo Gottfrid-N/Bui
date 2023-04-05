@@ -5,7 +5,7 @@ import se.gottfridn.library.version.Version;
 import se.gottfridn.library.version.VersionPart;
 
 /**
- * This interface defines a method for converting a version into a formatted string
+ * This interface defines a method for converting a {@code Version} into a formatted string
  *
  * @implSpec Separators are expected to be from the {@link Separator} enum.
  *

@@ -26,7 +26,7 @@ public final class BuiMain
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info(IDENTIFIER.getId() + "!");
+		LOGGER.info(IDENTIFIER.getName() + "!");
 		LOGGER.debug(VERSION.toVersionFormat());
 	}
 }
